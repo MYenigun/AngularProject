@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { TodoResponse } from '../../models/responses/todo-response';
-import { BootCampResponse } from '../../models/responses/bootcamp-model-response';
+import { TodoResponse } from '../../features/responses/models/todo-response';
+import { BootCampResponse } from '../../features/responses/models/bootcamp-model-response';
 
 @Component({
   selector: 'app-homepage',
@@ -24,7 +24,7 @@ export class HomepageComponent {
   }
 
   getListBootcamps(){
-    this.httpClient.get<BootCampResponse[]>("http://localhost:4200/api/Models")
+    this.httpClient.get<BootCampResponse[]>("http://localhost:60805/api/Employees")
     .subscribe({
       next:(response:BootCampResponse[])=>{
         console.log("Cevap geldi :",response);

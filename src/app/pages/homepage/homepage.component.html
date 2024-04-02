@@ -1,10 +1,15 @@
 <div class="container">
 <div class="row">
     <div class="col-md-4">
-        <p>burası sidebar alanı</p>
+        <div *ngFor="let item of bootCamp" class="card" style="width: 25rem; margin: 10px;">
+        <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"> Name :{{item.name}}</h6>
+        </div>
+        </div>
     </div>
     <div class="col-md-8">
         <router-outlet></router-outlet>
+        
         <div class="row" style="overflow:auto;height: auto;margin-top: 10px;">
             <div *ngFor="let item of bootCamp" class="card" style="width: 25rem; margin: 10px;">
                 <div class="card-body">
@@ -15,6 +20,16 @@
                 </div>
               </div>
         </div>
+        <!--<div class="row" style="overflow:auto;height: auto;margin-top: 10px;">
+            <div *ngFor="let item of todoList" class="card" style="width: 25rem; margin: 10px;">
+                <div class="card-body">
+                  <h5 class="card-title">ID :{{item.id}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> brandId :{{item.userId}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">brandName : {{item.title}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted"> Name :{{item.completed}}</h6>
+                </div>
+              </div>
+        </div>-->
     </div>
 </div>
 
